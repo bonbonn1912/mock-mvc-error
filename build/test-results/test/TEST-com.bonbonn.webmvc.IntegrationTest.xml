@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bonbonn.webmvc.IntegrationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-03-14T20:34:54.619Z" hostname="MacBook-Pro-von-Dominik.local" time="0.53">
+  <properties/>
+  <testcase name="thatSummaryIsReturned()" classname="com.bonbonn.webmvc.IntegrationTest" time="0.53">
+    <failure message="jakarta.servlet.ServletException: Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on POST request for &quot;http://localhost:8080/service/calculate&quot;: null" type="jakarta.servlet.ServletException">jakarta.servlet.ServletException: Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on POST request for &quot;http://localhost:8080/service/calculate&quot;: null
+	at app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022)
+	at app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at app//org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at app//org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:162)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:162)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:162)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at app//com.bonbonn.webmvc.IntegrationTest.thatSummaryIsReturned(IntegrationTest.java:41)
+	at java.base@17.0.5/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.5/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.5/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on POST request for &quot;http://localhost:8080/service/calculate&quot;: null
+	at app//org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at app//org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at app//org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at app//org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at app//org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at app//org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at app//org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at app//com.bonbonn.webmvc.service.CalculationService.calculate(CalculationService.java:20)
+	at app//com.bonbonn.webmvc.MockController.TestController.integration(TestController.java:22)
+	at java.base@17.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.5/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.5/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.5/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	... 24 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 10 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[21:34:53.647 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bonbonn.webmvc.IntegrationTest]: IntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:34:53.715 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bonbonn.webmvc.WebmvcApplication for test class com.bonbonn.webmvc.IntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-03-14T21:34:53.908+01:00  INFO 8800 --- [webmvc] [    Test worker] com.bonbonn.webmvc.IntegrationTest       : Starting IntegrationTest using Java 17.0.5 with PID 8800 (started by dominik in /Users/dominik/Downloads/webmvc)
+2025-03-14T21:34:53.909+01:00  INFO 8800 --- [webmvc] [    Test worker] com.bonbonn.webmvc.IntegrationTest       : No active profile set, falling back to 1 default profile: "default"
+2025-03-14T21:34:54.313+01:00  INFO 8800 --- [webmvc] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-03-14T21:34:54.319+01:00  INFO 8800 --- [webmvc] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-14T21:34:54.320+01:00  INFO 8800 --- [webmvc] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-14T21:34:54.346+01:00  INFO 8800 --- [webmvc] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-14T21:34:54.347+01:00  INFO 8800 --- [webmvc] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 432 ms
+2025-03-14T21:34:54.587+01:00  INFO 8800 --- [webmvc] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-03-14T21:34:54.588+01:00  INFO 8800 --- [webmvc] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-14T21:34:54.588+01:00  INFO 8800 --- [webmvc] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-14T21:34:54.610+01:00  INFO 8800 --- [webmvc] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 52377 (http) with context path '/'
+2025-03-14T21:34:54.616+01:00  INFO 8800 --- [webmvc] [    Test worker] com.bonbonn.webmvc.IntegrationTest       : Started IntegrationTest in 0.843 seconds (process running for 1.551)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
